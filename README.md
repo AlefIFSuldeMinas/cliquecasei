@@ -2,4 +2,4 @@
 
 Site de gerenciamento de casamentos.
 
-Site desenvolvido dentro da disciplina de Engenharia de Software II
+Desenvolvido dentro da disciplina de Engenharia de Software II
