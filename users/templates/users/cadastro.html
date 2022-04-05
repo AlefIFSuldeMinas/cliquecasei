@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script>
+        $(function() {
+              $("#TipoUsuario").change(function(){
+              var option = $('option:selected', this).attr('value');
+              $('#GrupoUsuario').val(option);
+           });
+        });
+    </script>
+
     <title>Cadastro de Usuários</title>
 </head>
+
 <body>
     <h1>Cadastro</h1>
     <form action="{% url 'cadastro'%}" method="POST"> {% csrf_token %}
         <input type="text" placeholder="Usuário" name="NomeUsuario">
-        <input type="text" placeholder="Função" name="GrupoUsuario">
+        <input type='hidden' placeholder="Função" name="GrupoUsuario" id="GrupoUsuario" value=""/>     
         <input type="email" placeholder="Email" name="Email">
         <input type="password" placeholder="Senha" name="Senha">
         <input type="submit" value="Cadastrar">
     </form>
+    <br>
+    <select name="TipoUsuario" id="TipoUsuario">
+        <option value="Noivo(a)">Noivo(a)</option>
+        <option value="Prestador de Serviço">Prestador de Serviço</option>
+    </select>
 </body>
+
 </html>
