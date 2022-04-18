@@ -1,0 +1,21 @@
+.intro-content{
+    margin-top: 2rem;
+    font-family: 'Dancing Script', cursive;
+    color: var(--azul-principal);
+    text-align: center;
+}
+
+.intro-content_titulo{
+    font-size: 3.4rem;
+}
+
+.intro-content_subtitulo{
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+    .intro-img{
+        object-fit: cover;
+        height: 30rem;
+    }
+  } 

@@ -1,0 +1,27 @@
+.presente{
+    margin-top: 6rem;
+}
+
+.presente-content{
+    text-align: center;
+    font-family:'Roboto', sans-serif;
+}
+
+.presente-content_titulo{
+    color: var(--azul-principal);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.presente-content-paragrafo{
+    color: var(--cinza);
+    font-size: 1.2rem;
+}
+
+.presente-content_btn{
+    background-color: white;
+    color: var(--azul-principal);
+    border: 2px solid var(--azul-principal);
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px 3px rgba(68,68,68,0.4);
+}
