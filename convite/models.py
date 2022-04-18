@@ -2,9 +2,9 @@ from django.db import models
 
 class ConviteCasamento(models.Model):
     Capa = models.ImageField(upload_to ='uploads/')
-    NomeNoivos = models.CharField(max)
+    NomeNoivos = models.TextField(max)
     DataCasamento = models.DateTimeField
     GaleriaId = models.IntegerField
-    Descricao = models.CharField(max)
-    Onde = models.CharField(max)
-    ListaPresentes = models.CharField(max)
+    Descricao = models.TextField(400)
+    Onde = models.TextField(max)
+    ListaPresentes = models.TextField(max)
