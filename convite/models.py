@@ -1,10 +1,10 @@
-from django.db import models
+from django import forms
 
-class ConviteCasamento(models.Model):
-    Capa = models.ImageField(upload_to ='uploads/')
-    NomeNoivos = models.TextField(max)
-    DataCasamento = models.DateTimeField
-    GaleriaId = models.IntegerField
-    Descricao = models.TextField(400)
-    Onde = models.TextField(max)
-    ListaPresentes = models.TextField(max)
+class ConviteCasamento(forms.Form):
+    Capa = forms.ImageField()
+    NomeNoivos = forms.CharField(max_length=100)
+    DataCasamento = forms.DateTimeField(input_formats=['%d/%m/%Y %H:%M'])
+    GaleriaId = forms.IntegerField()
+    Descricao = forms.CharField(widget=forms.Textarea)
+    Onde = forms.CharField(widget=forms.Textarea)
+    ListaPresentes = forms.CharField(max_length=100)
