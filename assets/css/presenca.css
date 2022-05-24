@@ -1,0 +1,33 @@
+.presenca{
+    margin-top: 6rem;
+    background-color: var(--rosa-principal);
+    padding: 2rem;
+}
+
+.presenca-content{
+    text-align: center;
+    font-family:'Roboto', sans-serif;
+}
+
+.presenca-content_titulo{
+    color: var(--azul-principal);
+    font-weight: 700;
+
+}
+
+.presenca-content_btn{
+    background-color: var(--azul-principal);
+    color: white;
+}
+
+.icon-coracao_azul{
+    align-items: center;
+    color: var(--azul-principal);
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+
+.presenca-content_paragrafo{
+    color: white;
+    font-size: 1.2rem;
+}
