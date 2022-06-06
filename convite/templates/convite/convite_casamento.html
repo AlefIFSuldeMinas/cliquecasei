@@ -182,22 +182,77 @@
                     nunc vel ultrices. Suspendisse potenti. Sed sed ex nec mi scelerisque eleifend et non
                     tortor. Fusce commodo vehicula tellus, a convallis purus maximus non. Duis dolor sem,
                     dignissim quis ligula sit amet, posuere elementum neque. Donec id efficitur eros.</p>
-                <a class="btn btn-lg active info-content_btn"><i class="fa-solid fa-list-check"></i> Confirmar
+                <a type="button" class="btn btn-lg active info-content_btn" data-toggle="modal"
+                    data-target="#meuModal"><i class="fa-solid fa-list-check"></i> Confirmar
                     presença</a><br>
                 <i class="fa-solid fa-heart icon-coracao_azul"></i>
             </div>
         </section>
+
+        <!-- Modal -->
+        <div id="meuModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Conteúdo do modal-->
+                <div class="modal-content">
+
+                    <!-- Cabeçalho do modal -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Confirme sua presença!</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Corpo do modal -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="conf_nome" class="form-label">Nome</label>
+                                <input type="Name" class="form-control" id="conf_nome">
+                            </div>
+                            <div class="mb-3">
+                                <label for="conf_sobrenome" class="form-label">Sobrenome</label>
+                                <input type="Sobrenome" class="form-control" id="conf_sobrenome">
+                            </div>
+                            <div class="mb-3">
+                                <label for="conf_telefone" class="form-label">Telefone</label>
+                                <input type="Telefone" class="form-control" id="conf_telefone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="conf_acompanhantes" class="form-label">Acompanhantes</label>
+                                <input type="Acompanhantes" class="form-control" id="conf_acompanhantes">
+                            </div>
+                            <div class="mb-3">
+                                <label for="conf_observações" class="form-label">Observações</label>
+                                <textarea name="Observaçoes" id="conf_observacoes" cols="60" rows="5"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Rodapé do modal-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Confirmar Presença</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+        </div>
+        </div>
+
     </main>
 
     <footer class="rodape">
-        <div class=container>
+        <div class="container sociaisfooter">
             <div class="sociais">
                 <i class="fa-brands fa-instagram"></i>
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-twitter"></i>
             </div>
-            <p class="rodape-content_paragrafo">Copyright © 2021-2022 Cliquecasei. All rights reserved.</p>
         </div>
+        <p class="rodape-content_paragrafo">Copyright © 2021-2022 Cliquecasei. All rights reserved.</p>
     </footer>
 
 </body>

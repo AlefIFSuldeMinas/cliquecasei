@@ -14,6 +14,13 @@ body{
 .sociais{
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 1.6rem;
+
+}
+
+.sociaisfooter{
+    flex-direction: row;
+    justify-content: center;
+    width: 10%;
 }
