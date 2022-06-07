@@ -17,4 +17,4 @@ def CadastroConvite(request):
     else:
         form = ConviteCasamento()
     context['form']= form
-    return render(request, "convite\convite_casamento.html", context)
+    return render(request, "convite/cadastro_convite.html", context)

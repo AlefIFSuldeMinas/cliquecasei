@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="pt-br">
 
 <head>
@@ -6,10 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Reset-->
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
 
     <!--Fonts Awesome-->
-    <link href="assets/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+    <link href="{% static '/css/fontawesome-free-6.1.1-web/css/all.css' %}" rel="stylesheet">
 
     <!--Google Fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,16 +34,16 @@
     </script>
 
     <!--Css-->
-    <link rel="stylesheet" href="assets/css/geral.css">
-    <link rel="stylesheet" href="assets/css/intro.css">
-    <link rel="stylesheet" href="assets/css/sobre.css">
-    <link rel="stylesheet" href="assets/css/info.css">
-    <link rel="stylesheet" href="assets/css/mapa.css">
-    <link rel="stylesheet" href="assets/css/presente.css">
-    <link rel="stylesheet" href="assets/css/presenca.css">
-    <link rel="stylesheet" href="assets/css/rodape.css">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link rel="stylesheet" href="assets/css/cadastro_convite.css">
+    <link rel="stylesheet" href="{% static 'css/geral.css' %}">
+    <link rel="stylesheet" href="{% static 'css/intro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sobre.css' %}">
+    <link rel="stylesheet" href="{% static 'css/info.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mapa.css' %}">
+    <link rel="stylesheet" href="{% static 'css/presente.css' %}">
+    <link rel="stylesheet" href="{% static 'css/presenca.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rodape.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cadastro_convite.css' %}">
     <title>CLIEQUECASEI - Cadastro</title>
 </head>
 
@@ -49,7 +51,7 @@
     <header>
         <nav class="navbar navbar-expand-md bg-light navbar-light">
             <a class="navbar-brand" href="#">
-                <img src="assets/imgs/logoPri.png" width="30" height="30" alt="">
+                <img src="{% static 'imgs/logoPri.png' %}" width="30" height="30" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -73,7 +75,7 @@
         <section class="container cadastro">
             <div class="row cad_con-cont">
                 <div class="col-sm-12 col-md-5 cad_con-esq">
-                    <img src="./assets/imgs/logoRosa.png" alt="Logo CLIEQUECASEI" width="15%" class="login-img">
+                    <img src="{% static 'imgs/logoRosa.png' %}" alt="Logo CLIEQUECASEI" width="15%" class="login-img">
                     <h1>Bem Vindo ao Cliquecasei!</h1>
                     <p>Ainda não é cadastrado? Então faça seu cadastro para poder criar seu convite de casamento!</p>
                     <a class="btn login-btn_esq">Cadastrar</a>
@@ -101,17 +103,17 @@
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                                     value="option1">
-                                <img src="assets/imgs/capa01.jpg" alt="Paisagem" width="50%" class="cad_con-form--checkimg">
+                                <img src="{% static 'imgs/capa01.jpg' %}" alt="Paisagem" width="50%" class="cad_con-form--checkimg">
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
                                     value="option2">
-                                <img src="assets/imgs/capa02.jpg" alt="Paisagem" width="50%" class="cad_con-form--checkimg">
+                                <img src="{% static 'imgs/capa02.jpg' %}" alt="Paisagem" width="50%" class="cad_con-form--checkimg">
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
                                     value="option3">
-                                <img src="assets/imgs/capa03.jpg" alt="Paisagem" width="50%" class="cad_con-form--checkimg">
+                                <img src="{% static 'imgs/capa03.jpg' %}" alt="Paisagem" width="50%" class="cad_con-form--checkimg">
                             </div>
                         </div>
                         <div class="form-group cad_con-form--file">

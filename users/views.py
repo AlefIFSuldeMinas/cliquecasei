@@ -8,13 +8,12 @@ from users.models import User
 
 def cadastro(request):
     if request.method == "GET":
-        return render(request, 'users/cadastro.html')
+        return render(request, 'users/cadastro_usuario.html')
     else:
         NomeUsuario = request.POST.get('NomeUsuario')
         Email = request.POST.get('Email')
         Senha = request.POST.get('Senha')
-        GrupoUsuario = request.POST.get('GrupoUsuario')
-        user = User.objects.create_user(username=NomeUsuario,email=Email,password=Senha,GrupoUsuario=GrupoUsuario)
+        user = User.objects.create_user(username=NomeUsuario,email=Email,password=Senha)
         user.save()
         return HttpResponse(NomeUsuario)
 
