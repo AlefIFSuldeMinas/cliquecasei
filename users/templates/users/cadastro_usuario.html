@@ -83,34 +83,29 @@
                 </div>
                 <div class="col-sm-12 col-md-7 cad_usu-dir">
                     <h2 class="cad_usu-titulo">Cadastre-se!</h2>
-                    <form class="cad_usu-form">
+                    <form class="cad_usu-form" action="{% url 'cadastro'%}" method="POST"> {% csrf_token %}
                         <div class="form-group">
-                            <input type="name" class="form-control" id="log-email" placeholder="Nome Completo">
+                            <input type="name" class="form-control" id="log-email" placeholder="Nome Completo" name="NomeUsuario">
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" id="log-email" aria-describedby="emailHelp"
-                                placeholder="E-mail">
+                                placeholder="E-mail" name="Email">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="log-senha" placeholder="Senha">
+                            <input type="password" class="form-control" id="log-senha" name="Senha" placeholder="Senha">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Endereço">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Endereço" name="Endereco">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Telefone">
-                        </div>
-
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Endereço">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Celular" name="Celular">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-5">
-                                <input type="text" class="form-control" id="Cidade" placeholder="Cidade">
+                                <input type="text" class="form-control" id="Cidade" placeholder="Cidade" name="Cidade">
                             </div>
                             <div class="form-group col-md-4">
-                                <select id="inputState" class="form-control" aria-placeholder="Estado">
+                                <select id="inputState" class="form-control" aria-placeholder="Estado" name="Estado">
                                     <option selected>Estado</option>
                                     <option>AC</option>
                                     <option>AL</option>
@@ -142,15 +137,15 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
-                                <input type="text" class="form-control" id="inputZip" placeholder="CEP">
+                                <input type="text" class="form-control" id="inputZip" placeholder="CEP" name="Cep">
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Bairro">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Bairro" name="Bairro">
                         </div>
 
-                        <button type="submit" class="btn btn-primary cad_usu-btn_dir"><i
-                                class="fa-solid fa-right-to-bracket"></i> Cadastrar</button>
+                        <button type="submit" class="btn btn-primary cad_usu-btn_dir" value="Cadastrar">
+                            <i class="fa-solid fa-right-to-bracket"></i> Cadastrar</button>
                     </form>
                 </div>
             </div>
