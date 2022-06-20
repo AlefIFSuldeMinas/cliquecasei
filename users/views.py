@@ -1,11 +1,10 @@
 from importlib.metadata import requires
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as loginDjango
 from users.models import User
-import logging
 
 
 def cadastro(request):
@@ -43,14 +42,13 @@ def login(request):
     else:
         Email = request.POST.get('Email')
         Senha = request.POST.get('Senha')
-        print(Senha, Email)
         user = authenticate(username=Email, password=Senha)
 
         if user:
             loginDjango(request, user)
-            return HttpResponse("Logado com sucesso!")
+            return render(request, 'convite/cadastro_convite.html')
         else:
-            return HttpResponse('Senha errada')
+            return redirect('login')
 
 
 def site(request):

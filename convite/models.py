@@ -8,3 +8,4 @@ class ConviteCasamento(forms.Form):
     Descricao = forms.CharField(widget=forms.Textarea)
     Onde = forms.CharField(widget=forms.Textarea)
     ListaPresentes = forms.CharField(max_length=100)
+

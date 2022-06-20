@@ -1,5 +1,7 @@
 from convite.models import ConviteCasamento
 from django.shortcuts import render
+from django.http import HttpResponse
+
 
 def CadastroConvite(request):
     context = {}
@@ -18,3 +20,6 @@ def CadastroConvite(request):
         form = ConviteCasamento()
     context['form']= form
     return render(request, "convite/cadastro_convite.html", context)
+
+def Exemplo(request):
+    return render(request, "convite/convite_casamento.html")

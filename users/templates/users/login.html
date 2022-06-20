@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="pt-br">
+    
+{% if messages %}
+<ul class="messages" style="position: fixed; top: 40%; left: 78%; z-index: 100;">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+</ul>
+{% endif %}
 
 <head>
     <meta charset="UTF-8">
@@ -67,11 +75,10 @@
         <section class="container login">
             <div class="row login-cont">
                 <div class="col-sm-12 col-md-5 login-esq">
-                    <img src="{% static 'imgs/logoRosa.png' %}" alt="Logo CLIEQUECASEI" width="15%"
-                        class="login-img">
+                    <img src="{% static 'imgs/logoRosa.png' %}" alt="Logo CLIEQUECASEI" width="15%" class="login-img">
                     <h1>Bem Vindo ao Cliquecasei!</h1>
                     <p>Ainda não é cadastrado? Então faça seu cadastro para poder criar seu convite de casamento!</p>
-                    <a class="btn login-btn_esq">Cadastrar</a>
+                    <a href="/auth/cadastro" class="btn login-btn_esq">Cadastrar</a>
                 </div>
                 <div class="col-sm-12 col-md-7 login-dir">
                     <h2 class="login-titulo">Faça seu login!</h2>
@@ -81,10 +88,9 @@
                                 name="Email" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="log-senha" 
-                            name="Senha" placeholder="Senha">
+                            <input type="password" class="form-control" id="log-senha" name="Senha" placeholder="Senha">
                         </div>
-                        <button type="submit" class="btn btn-primary login-btn_dir"><i
+                        <button href="/Exemplo" type="submit" class="btn btn-primary login-btn_dir"><i
                                 class="fa-solid fa-right-to-bracket"></i> Acessar</button>
                     </form>
                 </div>
