@@ -12,4 +12,5 @@ class ConviteCasamento(models.Model):
     Estado  = models.CharField(max_length=100)
     Cep = models.CharField(max_length=100)
     ListaPresentes = models.CharField(max_length=100)
+    IdUsuario = models.IntegerField(default=0)
 
