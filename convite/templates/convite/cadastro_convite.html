@@ -82,17 +82,17 @@
                 </div>
                 <div class="col-sm-12 col-md-7 cad_con-dir">
                     <h2 class="cad_con-titulo">Faça o cadastro do seu convite!</h2>
-                    <form class="cad_con-form">
+                    <form class="cad_con-form" action="{% url 'CadastroConvite'%}" method="POST"> {% csrf_token %}
                         <div class="form-group">
-                            <input type="name" class="form-control" id="log-email" placeholder="Nome da noiva">
+                            <input type="name" class="form-control" id="log-email" name="NomeNoiva" placeholder="Nome da noiva">
                         </div>
                         <div class="form-group">
-                            <input type="name" class="form-control" id="log-email" placeholder="Nome do noivo">
+                            <input type="name" class="form-control" id="log-email" name="NomeNoivo" placeholder="Nome do noivo">
                         </div>
                         <div class="form-group">
                             <!-- Datepicker as text field -->
                             <div class="input-group date" data-date-format="dd/mm/yyyy">
-                                <input type="date" class="form-control" placeholder="dd/mm/yyyy">
+                                <input type="date" class="form-control" placeholder="dd/mm/yyyy" name="DataCasamento">
                                 <div class="input-group-addon">
                                     <span class="glyphicon glyphicon-th"></span>
                                 </div>
@@ -101,52 +101,52 @@
                         <div class="form-group cad_con-form--check">
                             <label for="from-check">Escolha uma capa</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                <input class="form-check-input" type="radio" name="Capa" id="inlineRadio1"
                                     value="option1">
                                 <img src="{% static 'imgs/capa01.jpg' %}" alt="Paisagem" width="50%" class="cad_con-form--checkimg">
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                <input class="form-check-input" type="radio" name="Capa" id="inlineRadio2"
                                     value="option2">
                                 <img src="{% static 'imgs/capa02.jpg' %}" alt="Paisagem" width="50%" class="cad_con-form--checkimg">
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                <input class="form-check-input" type="radio" name="Capa" id="inlineRadio3"
                                     value="option3">
                                 <img src="{% static 'imgs/capa03.jpg' %}" alt="Paisagem" width="50%" class="cad_con-form--checkimg">
                             </div>
                         </div>
                         <div class="form-group cad_con-form--file">
-                            <label for="exampleFormControlFile1">Fotos do casal(max: 03 fotos)</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple>
+                            <label for="exampleFormControlFile1">Foto do casal:</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="FotoCasal">
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Descrição"></textarea>
+                                placeholder="Descrição" name="Descricao"></textarea>
                         </div>
 
 
                         <div class="form-group">
                             <input type="text" class="form-control" id="inputAddress"
-                                placeholder="Endereco do casamento">
+                                placeholder="Endereco do casamento" name="Endereco">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-5">
-                                <input type="text" class="form-control" id="Cidade" placeholder="Cidade">
+                                <input type="text" class="form-control" id="Cidade" placeholder="Cidade" name="Cidade">
                             </div>
                             <div class="form-group col-md-4">
-                                <select id="inputState" class="form-control" aria-placeholder="Estado">
+                                <select id="inputState" class="form-control" aria-placeholder="Estado" name="Estado">
                                     <option selected>Estado</option>
                                     <option>...</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
-                                <input type="text" class="form-control" id="inputZip" placeholder="CEP">
+                                <input type="text" class="form-control" id="inputZip" placeholder="CEP" name="Cep">
                             </div>
                         </div>
                         <div class="form-group">
                             <input type="name" class="form-control" id="log-email"
-                                placeholder="Link da lista de presente">
+                                placeholder="Link da lista de presente" name="ListaPresentes">
                         </div>
                         <button type="submit" class="btn btn-primary login-btn_dir"><i
                                 class="fa-solid fa-right-to-bracket"></i> Cadastrar</button>

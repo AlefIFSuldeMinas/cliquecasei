@@ -1,8 +1,6 @@
-from importlib.metadata import requires
-from django.contrib.auth import login, get_user_model
-from django.shortcuts import get_object_or_404
+from django.contrib.auth import login
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate
 from users.models import User
