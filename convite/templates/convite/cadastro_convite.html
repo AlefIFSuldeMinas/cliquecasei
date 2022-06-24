@@ -28,10 +28,13 @@
 
     <!--Datapicker-->
     <script
-        src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js'></script>
+        src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js'>
+    </script>
     <script>
         $('.input-group.date').datepicker({ format: "dd/mm/yyyy" });
     </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 
     <!--Css-->
     <link rel="stylesheet" href="{% static 'css/geral.css' %}">
@@ -158,3 +161,8 @@
 </body>
 
 </html>
+
+<script>
+    $("telefone").mask("(99) 99999-9999");
+    $("cep").mask("99999-999");
+</script>
