@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'cliquecasei.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
         'NAME': 'cliquecasei',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': '123456',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
