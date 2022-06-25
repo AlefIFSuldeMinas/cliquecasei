@@ -1,1 +1,1 @@
-web: gunicorn cliquecasei.wsgi.py
+web: gunicorn cliquecasei.wsgi
