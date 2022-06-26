@@ -53,15 +53,7 @@
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
+                    <li><form action="{% url 'sair'%}" ><button type="submit">Sair</button></form></li>                               
                 </ul>
             </div>
         </nav>
@@ -70,8 +62,8 @@
         <section class="intro">
             <img class="intro-img" src="{% static 'imgs/casal1.jpg' %}" alt="Um casal abraçado na praia" width="100%">
             <div class="intro-content">
-                <h1 class="intro-content_titulo">Ana Olivia & Carlos Eduardo</h1>
-                <h2 class="intro-content_subtitulo">*23-03-2023*</h2>
+                <h1 class="intro-content_titulo">{{ convites.NomeNoivo }} & {{ convites.NomeNoiva }}</h1>
+                <h2 class="intro-content_subtitulo">*{{ convites.DataCasamento }}*</h2>
             </div>
         </section>
 
@@ -104,22 +96,7 @@
             </div>
             <div class="sobre-content">
                 <h2 class="sobre-content_titulo">ESTAMOS CASANDO!</h2>
-                <P class="sobre-content_paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris
-                    enim,
-                    sagittis a nunc ut, lacinia euismod dui. Nunc venenatis massa vitae sapien volutpat,
-                    sed suscipit odio efficitur. Mauris ullamcorper pulvinar neque vitae suscipit. Nulla
-                    sed imperdiet ex, eget tristique nisi. Ut faucibus ultricies suscipit. Fusce varius in
-                    nunc vel ultrices. Suspendisse potenti. Sed sed ex nec mi scelerisque eleifend et non
-                    tortor. Fusce commodo vehicula tellus, a convallis purus maximus non. Duis dolor sem,
-                    dignissim quis ligula sit amet, posuere elementum neque. Donec id efficitur eros.</p>
-
-                <P class="sobre-content_paragrafo">Sed in congue ante. Duis mauris orci, commodo et porttitor at,
-                    ultricies et massa.
-                    Nam scelerisque lorem vel magna commodo, vel accumsan ante ultrices. Nam ut sapien
-                    quis urna vulputate pretium. Aliquam porta augue vitae rhoncus laoreet. Vivamus at
-                    velit elementum, blandit neque ac, aliquam eros. Fusce metus orci, dictum non fringilla
-                    sed, vulputate ut mi. Nunc in dolor vestibulum, vestibulum massa ut, vehicula est.
-                    Morbi metus lacus, lacinia condimentum libero et, lobortis dictum elit.</p>
+                <P class="sobre-content_paragrafo">{{ convites.Descricao }}</p>
                 <div class="sobre-content_icon">
                     <i class="fa-solid fa-heart icon-coracao_azul"></i>
                 </div>
@@ -131,44 +108,23 @@
                 <h2 class="info-content_titulo">O GRANDE DIA</h2>
                 <i class="fa-solid fa-heart icon-coracao_azul"></i>
                 <h3 class="info-content_subtitulo">Quando</h3>
-                <p class="info-content_paragrafo">23 de set. de 2023 19:00</p>
+                <p class="info-content_paragrafo">{{ convites.DataCasamento }}</p>
                 <hr style="width:25%; color: #031859; height:2px; border-width:0; background-color:#031859">
                 <h3 class="info-content_subtitulo">Onde</h3>
                 <address>
-                    <p class="info-content_paragrafo">Capela Santa Maria,
-                        Av. Bernardino de Campos, 98 -
-                        São Paulo - SP - CEP: 12345-678</p>
+                    <p class="info-content_paragrafo">
+                        {{ convites.Endereco }}, 
+                        {{ convites.Cidade }},
+                        {{ convites.Estado }}
+                    </p>
                 </address>
-                <a class="btn btn-lg active info-content_btn"><i class="fa-solid fa-list-check"></i> Confirmar
-                    presença</a>
-            </div>
-        </section>
-
-        <section class="container mapa">
-            <div class="mapa-content">
-                <h2 class="mapa-content_titulo">COMO CHEGAR?</h2>
-                <iframe class="mapa-content_map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.988894063025!2d-46.53074368506189!3d-21.35093328582468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b63fd0272469bf%3A0xe013b6753e91a94!2sInstituto%20Federal%20de%20Educa%C3%A7%C3%A3o%2C%20Ci%C3%AAncia%20e%20Tecnologia%20do%20Sul%20de%20Minas%20Gerais%20-%20Campus%20Muzambinho!5e0!3m2!1spt-BR!2sbr!4v1648516682429!5m2!1spt-BR!2sbr"
-                    width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div class="mapa-content_icon">
-                    <i class="fa-solid fa-heart icon-coracao_azul"></i>
-                </div>
             </div>
         </section>
 
         <section class="container presente">
             <div class="presente-content">
                 <h2 class="presente-content_titulo">LISTA DE PRESENTES</h2>
-                <p class="presente-content-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                    mauris
-                    enim,
-                    sagittis a nunc ut, lacinia euismod dui. Nunc venenatis massa vitae sapien volutpat,
-                    sed suscipit odio efficitur. Mauris ullamcorper pulvinar neque vitae suscipit. Nulla
-                    sed imperdiet ex, eget tristique nisi. Ut faucibus ultricies suscipit. Fusce varius in
-                    nunc vel ultrices. Suspendisse potenti. Sed sed ex nec mi scelerisque eleifend et non
-                    tortor. Fusce commodo vehicula tellus, a convallis purus maximus non. Duis dolor sem,
-                    dignissim quis ligula sit amet, posuere elementum neque. Donec id efficitur eros.</p>
+                <p class="presente-content-paragrafo">{{ convites.ListaPresentes }}</p>
                 <a class="btn btn-lg active presente-content_btn" href="#"><i class="fa-solid fa-gift"></i> Comprar
                     presente</a>
             </div>
@@ -178,15 +134,6 @@
         <section class="presenca">
             <div class="presenca-content">
                 <h2 class="presenca-content_titulo">CONFIRME SUA PRESENÇA</h2>
-                <p class="presenca-content_paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                    mauris
-                    enim,
-                    sagittis a nunc ut, lacinia euismod dui. Nunc venenatis massa vitae sapien volutpat,
-                    sed suscipit odio efficitur. Mauris ullamcorper pulvinar neque vitae suscipit. Nulla
-                    sed imperdiet ex, eget tristique nisi. Ut faucibus ultricies suscipit. Fusce varius in
-                    nunc vel ultrices. Suspendisse potenti. Sed sed ex nec mi scelerisque eleifend et non
-                    tortor. Fusce commodo vehicula tellus, a convallis purus maximus non. Duis dolor sem,
-                    dignissim quis ligula sit amet, posuere elementum neque. Donec id efficitur eros.</p>
                 <a type="button" class="btn btn-lg active info-content_btn" data-toggle="modal"
                     data-target="#meuModal"><i class="fa-solid fa-list-check"></i> Confirmar
                     presença</a><br>
@@ -209,35 +156,33 @@
 
                     <!-- Corpo do modal -->
                     <div class="modal-body">
-                        <form>
+                        <form action="{% url 'CadastrarConvidado'%}" method="POST"> {% csrf_token %}
                             <div class="mb-3">
-                                <label for="conf_nome" class="form-label">Nome</label>
-                                <input type="Name" class="form-control" id="conf_nome">
-                            </div>
-                            <div class="mb-3">
-                                <label for="conf_sobrenome" class="form-label">Sobrenome</label>
-                                <input type="Sobrenome" class="form-control" id="conf_sobrenome">
+                                <label for="conf_nome" class="form-label" >Nome</label>
+                                <input type="Name" Name="NomeConvidado" class="form-control" id="conf_nome">
                             </div>
                             <div class="mb-3">
                                 <label for="conf_telefone" class="form-label">Telefone</label>
-                                <input type="Telefone" class="form-control" id="conf_telefone">
+                                <input type="Telefone"  Name="TelefoneConvidado" class="form-control" id="conf_telefone">
                             </div>
                             <div class="mb-3">
-                                <label for="conf_acompanhantes" class="form-label">Acompanhantes</label>
-                                <input type="Acompanhantes" class="form-control" id="conf_acompanhantes">
+                                <label for="conf_acompanhantes" class="form-label" >Acompanhantes</label>
+                                <input type="Acompanhantes" Name="Acompanhantes" class="form-control" id="conf_acompanhantes">
                             </div>
                             <div class="mb-3">
-                                <label for="conf_observações" class="form-label">Observações</label>
-                                <textarea name="Observaçoes" id="conf_observacoes" cols="60" rows="5"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Observações" name="Observacoes"></textarea>
                             </div>
+                            <input class="form-label" Name="IdCasal" value={{convites.IdUsuario}}>
+                                            <!-- Rodapé do modal-->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Confirmar Presença</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    </div>
                         </form>
                     </div>
 
-                    <!-- Rodapé do modal-->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Confirmar Presença</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                    </div>
+
 
                 </div>
             </div>

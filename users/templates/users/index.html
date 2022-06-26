@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+  <title>Cliquecasei</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!--Css-->
+  <link rel="stylesheet" href="{% static 'css/geral.css' %}">
+  <link rel="stylesheet" href="{% static 'css/intro.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sobre.css' %}">
+  <link rel="stylesheet" href="{% static 'css/info.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mapa.css' %}">
+  <link rel="stylesheet" href="{% static 'css/presente.css' %}">
+  <link rel="stylesheet" href="{% static 'css/presenca.css' %}">
+  <link rel="stylesheet" href="{% static 'css/rodape.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Roboto", sans-serif
+    }
+  </style>
+</head>
+
+<body class="w3-light-grey">
+
+  <!-- Page Container -->
+  <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+    <!-- The Grid -->
+    <div class="w3-row-padding">
+
+      <!-- Left Column -->
+      <div class="w3-third">
+
+        <div class="w3-white w3-text-grey w3-card-4">
+          <div class="w3-display-container">
+            <img src="{% static 'imgs/avatar_hat.jpg' %}" style="width:100%" alt="Avatar">
+          </div>
+          <div class="w3-container">
+            <br>
+            <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-teal"
+                style="color: #031859 !important"></i>{{usuario.NomeUsuario}}</p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"
+                style="color: #031859 !important"></i>{{usuario.Cidade}}, {{usuario.Estado}}</p>
+            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"
+                style="color: #031859 !important"></i>{{usuario.username}}m</p>
+            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"
+                style="color: #031859 !important"></i>{{usuario.Celular}}</p>
+            <hr>
+          </div>
+        </div><br>
+
+        <!-- End Left Column -->
+      </div>
+
+      <!-- Right Column -->
+      <div class="w3-twothird">
+
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <h2 class="w3-text-grey w3-padding-16"><i style="color: #031859 !important"
+              class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Edição de Dados Cadastrados
+          </h2>
+          <div class="w3-container">
+
+            <form class="cad_usu-form" action="{% url 'edicao'%}" method="POST"> {% csrf_token %}
+              <div class="form-group">
+                <input type="name" class="form-control" id="log-email" placeholder="Nome Completo: " name="NomeUsuario"
+                  value={{usuario.NomeUsuario}}>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="log-email" aria-describedby="emailHelp"
+                  placeholder="E-mail:" name="Email" value="{{usuario.username}}">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="inputAddress" placeholder="Endereço: " name="Endereco"
+                  value={{usuario.Endereco}}>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="inputCellphone" placeholder="Celular:" name="Celular"
+                  value={{usuario.Celular}}>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-5">
+                  <input type="text" class="form-control" id="Cidade" placeholder="Cidade:" name="Cidade"
+                    value={{usuario.Cidade}}>
+                </div>
+                <div class="form-group col-md-4">
+                  <select id="inputState" class="form-control" aria-placeholder="Estado" name="Estado">
+                    <option selected>{{usuario.Estado}}</option>
+                    <option>AC</option>
+                    <option>AL</option>
+                    <option>AP</option>
+                    <option>AM</option>
+                    <option>BA</option>
+                    <option>CE</option>
+                    <option>DF</option>
+                    <option>ES</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>MG</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PR</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RJ</option>
+                    <option>RN</option>
+                    <option>RS</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SC</option>
+                    <option>SP</option>
+                    <option>SE</option>
+                    <option>TO</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <input type="text" class="form-control" id="inputZip" placeholder="CEP:" name="Cep"
+                    value={{usuario.Cep}}>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="inputAddress" placeholder="Bairro: " name="Bairro"
+                  value={{usuario.Bairro}}>
+              </div>
+
+              <button type="submit" style="background-color: #031859" class="btn btn-primary login-btn_dir"><i
+                  class="fa-solid fa-right-to-bracket"></i> Atualizar cadastro</button>
+            </form>
+            <br>
+          </div>
+        </div>
+
+        <div class="w3-container w3-card w3-white">
+          <h2 class="w3-text-grey w3-padding-16"><i style="color: #031859 !important"
+              class="fa fa-list fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Convites</h2>
+
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>Lista de convites(Compartilhe seus convites com os links abaixo)</b></h5>
+            <table class="table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th scope="col">Links</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% if convites %}
+                {% for convite in convites %}
+                <tr>
+                  <th scope="row">https://cliqueicaseieng.herokuapp.com/ConviteCasamentoVM/{{convite.id}}</th>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <p>Vocês não tem convites cadastrados. Faça o seu agora!.</p>
+                {% endif %}
+
+              </tbody>
+            </table>
+          </div>
+
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>Lista de convidados confirmados</b></h5>
+            <table class="table" style="width: 100%;">
+              <thead>
+                <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Acompanhantes</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Observações</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% if convidados %}
+                {% for convidado in convidados %}
+                <tr>
+                  <th scope="row">{{convidado.NomeConvidado}}</th>
+                  <th scope="row">{{convidado.Acompanhantes}}</th>
+                  <th scope="row">{{convidado.TelefoneConvidado}}</th>
+                  <th scope="row">{{convidado.Observacoes}}</th>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <p>Vocês não tem convidados cadastrados.</p>
+                {% endif %}
+
+              </tbody>
+            </table>
+          </div>
+          <form action="{% url 'CadastroConvite'%}" method="GET">
+            <div class="w3-container">
+              <button type="submit" style="background-color: #031859 " class="btn btn-primary login-btn_dir"><i
+                  class="fa-solid fa-right-to-bracket"></i> Cadastrar convite</button>
+              <hr>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- End Right Column -->
+      </div>
+
+      <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
+    <br>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,11 +1,13 @@
 from http.client import HTTPResponse
-from convite.models import ConviteCasamento
+from convite.models import ConviteCasamento, Convidados
 from django.shortcuts import render
+from django.http import HttpResponse
+
 
 
 def CadastroConvite(request):
     if request.method == "GET":
-        return render(request, 'convite/convite_casamento.html')
+        return render(request, 'convite/cadastro_convite.html')
     else:
         NomeNoiva = request.POST.get('NomeNoiva')
         NomeNoivo = request.POST.get('NomeNoivo')
@@ -34,12 +36,37 @@ def CadastroConvite(request):
             IdUsuario = IdUsuario
         )
         convite.save()
-        if request.user.is_authenticated:
-            print(vars(convite))
-        return render(request, 'convite/convite_casamento.html')
+        return ConviteCasamentoVM(request, int(ConviteCasamento.objects.count())-1)
 
-def Exemplo(request):
-    
-    return render(request, "convite/convite_casamento.html")
+def ConviteCasamentoVM(request, codigoId):
+    convites = ConviteCasamento.objects.order_by('id')[int(codigoId)]
+    contexto = {
+      'convites': convites
+    }
+    return render(request, "convite/convite_casamento.html", contexto)
+
+def CadastrarConvidado(request):
+    NomeConvidado =  request.POST.get('NomeConvidado')
+    Acompanhantes =  request.POST.get('Acompanhantes')
+    TelefoneConvidado = request.POST.get('TelefoneConvidado')
+    Observacoes = request.POST.get('Observacoes')
+    IdCasal = request.POST.get('IdCasal')
+
+    convidados = Convidados.objects.create(
+            NomeConvidado = NomeConvidado,
+            Acompanhantes = Acompanhantes,
+            TelefoneConvidado = TelefoneConvidado,
+            Observacoes = Observacoes,
+            IdCasal = IdCasal
+        )
+    convidados.save()
+    return HttpResponse('Presença confirmada!')
+
+
+
+
+
+
+
 
 

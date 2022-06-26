@@ -60,14 +60,8 @@
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="Exemplo">Exemplo Convite</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                    <li>
+                        <form action="{% url 'sair'%}"><button type="submit">Sair</button></form>
                     </li>
                 </ul>
             </div>
@@ -79,17 +73,17 @@
                 <div class="col-sm-12 col-md-5 cad_con-esq">
                     <img src="{% static 'imgs/logoRosa.png' %}" alt="Logo CLIEQUECASEI" width="15%" class="login-img">
                     <h1>Bem Vindo ao Cliquecasei!</h1>
-                    <p>Ainda não é cadastrado? Então faça seu cadastro para poder criar seu convite de casamento!</p>
-                    <a class="btn login-btn_esq">Cadastrar</a>
                 </div>
                 <div class="col-sm-12 col-md-7 cad_con-dir">
                     <h2 class="cad_con-titulo">Faça o cadastro do seu convite!</h2>
                     <form class="cad_con-form" action="{% url 'CadastroConvite'%}" method="POST"> {% csrf_token %}
                         <div class="form-group">
-                            <input type="name" class="form-control" id="log-email" name="NomeNoiva" placeholder="Nome da noiva">
+                            <input type="name" class="form-control" id="log-email" name="NomeNoiva"
+                                placeholder="Nome da noiva">
                         </div>
                         <div class="form-group">
-                            <input type="name" class="form-control" id="log-email" name="NomeNoivo" placeholder="Nome do noivo">
+                            <input type="name" class="form-control" id="log-email" name="NomeNoivo"
+                                placeholder="Nome do noivo">
                         </div>
                         <div class="form-group">
                             <!-- Datepicker as text field -->
@@ -100,37 +94,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group cad_con-form--check">
-                            <label for="from-check">Escolha uma capa</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Capa" id="inlineRadio1"
-                                    value="option1">
-                                <img src="{% static 'imgs/capa01.jpg' %}" alt="Paisagem" width="50%"
-                                    class="cad_con-form--checkimg">
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Capa" id="inlineRadio2"
-                                    value="option2">
-                                <img src="{% static 'imgs/capa02.jpg' %}" alt="Paisagem" width="50%"
-                                    class="cad_con-form--checkimg">
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Capa" id="inlineRadio3"
-                                    value="option3">
-                                <img src="{% static 'imgs/capa03.jpg' %}" alt="Paisagem" width="50%"
-                                    class="cad_con-form--checkimg">
-                            </div>
-                        </div>
-                        <div class="form-group cad_con-form--file">
-                            <label for="exampleFormControlFile1">Foto do casal:</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="FotoCasal">
-                        </div>
                         <div class="form-group">
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                 placeholder="Descrição" name="Descricao"></textarea>
                         </div>
-
-
                         <div class="form-group">
                             <input type="text" class="form-control" id="inputAddress"
                                 placeholder="Endereco do casamento" name="Endereco">
@@ -176,8 +143,11 @@
                             </div>
                         </div>
                         <div class="form-group">
+
                             <input type="name" class="form-control" id="log-email"
                                 placeholder="Link da lista de presente" name="ListaPresentes">
+                            <label class="form-label">Recomendamos que você use um link para um carrinho de compras do
+                                site que preferir.</label>
                         </div>
                         <button type="submit" class="btn btn-primary login-btn_dir"><i
                                 class="fa-solid fa-right-to-bracket"></i> Cadastrar</button>

@@ -140,3 +140,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 
 django_heroku.settings(locals())
+
+DATE_FORMAT='d/m/Y'
+
+DATE_INPUT_FORMATS = (
+    '%d/%m/%Y',
+)
