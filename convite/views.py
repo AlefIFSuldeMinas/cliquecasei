@@ -36,7 +36,7 @@ def CadastroConvite(request):
             IdUsuario = IdUsuario
         )
         convite.save()
-        return ConviteCasamentoVM(request, int(ConviteCasamento.objects.count()))
+        return ConviteCasamentoVM(request, int(ConviteCasamento.objects.count())-1)
 
 def ConviteCasamentoVM(request, codigoId):
     convites = ConviteCasamento.objects.order_by('id')[int(codigoId)]
