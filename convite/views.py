@@ -39,7 +39,7 @@ def CadastroConvite(request):
         return ConviteCasamentoVM(request, int(ConviteCasamento.objects.count())-1)
 
 def ConviteCasamentoVM(request, codigoId):
-    convites = ConviteCasamento.objects.order_by('id')[int(codigoId)]
+    convites = ConviteCasamento.objects.order_by('id')[int(codigoId)-1]
     contexto = {
       'convites': convites
     }
