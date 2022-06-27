@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
-    'convite.apps.ConviteConfig'
+    'convite.apps.ConviteConfig',
+    'mathfilters' 
 ]
 
 MIDDLEWARE = [

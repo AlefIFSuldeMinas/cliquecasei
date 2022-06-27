@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
+{% load mathfilters %}
+
 <html lang="pt-br">
 
 <head>
@@ -168,7 +170,7 @@
                 {% if convites %}
                 {% for convite in convites %}
                 <tr>
-                  <th scope="row">https://cliquecasei.herokuapp.com/ConviteCasamentoVM/{{convite.id}}</th>
+                  <th scope="row">https://cliquecasei.herokuapp.com/ConviteCasamentoVM/{{convite.id|sub:1}}</th>
                 </tr>
                 {% endfor %}
                 {% else %}
